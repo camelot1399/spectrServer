@@ -51,8 +51,6 @@ const TypeBrand = sequelize('type_brand', {
 })
 
 
-
-
 User.hasOne(Basket); // USER и BASKET связь 1 к 1
 Basket.belongsTo(User) // сообщаем, что корзина принадлежит пользователю
 
