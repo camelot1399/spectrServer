@@ -1,4 +1,4 @@
-const sequelize = require('./db.js');
+const sequelize = require('../db');
 
 const {DataTypes} = require('sequelize');
 
@@ -46,7 +46,7 @@ const Rating = sequelize.define('rating', {
     rate: {type: DataTypes.INTEGER, allowNull: false}
 })
 
-const TypeBrand = sequelize('type_brand', {
+const TypeBrand = sequelize.define('type_brand', {
     id: {type: DataTypes.INTEGER, primaryKey: true, autoIncrement: true},
 })
 
