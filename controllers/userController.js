@@ -15,6 +15,9 @@ class UserController {
     async registration(req, res, next) {
         const {email, password, role} = req.body;
 
+        console.log('email', email);
+        console.log('pass', password);
+
         if (!email || !password) {
             return next(ApiError.badRequest('Некорректный пароль или email'));
         }
@@ -35,6 +38,10 @@ class UserController {
 
     async login(req, res, next) {
         const {email, password} = req.body;
+
+        console.log('email', email);
+        console.log('pass', password);
+        
         const user = await User.findOne({where: {email}});
 
         if (!user) {
